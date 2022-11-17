@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="Pick&nbsp; a category">
+<meta name="description" content="">
+<title>Category</title>
+
+<meta name="generator" content="Nicepage 4.19.5, nicepage.com">
+<link id="u-theme-google-font" rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+<link id="u-page-google-font" rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
+<!-- Css Styles -->
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" type="text/css">
+
+<link rel="stylesheet" href="../static/css/style.css"
+	th:href="@{/css/style.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/nicepage.css"
+	th:href="@{/css/nicepage.css}" media="screen">
+<link rel="stylesheet" href="../static/css/Categories.css"
+	th:href="@{/css/Categories.css}" media="screen">
+<script class="u-script" type="text/javascript"
+	th:href="@{/js/jquery.js}" src="../static/js/jquery.js" defer=""></script>
+<script class="u-script" type="text/javascript"
+	th:href="@{/js/nicepage.js}" src="../static/js/nicepage.js" defer=""></script>
+
+<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "/images/default-logo.png"
+}</script>
+<meta name="theme-color" content="#222589">
+<meta property="og:title" content="Categories">
+<meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode" data-lang="en">
+
+		<!-- Header Section Begin -->
+	<header class="header">
+		<div th:replace="common::headertop"></div>
+		<div th:replace="common::headerdown"></div>
+	</header>
+	<!-- Header Section End -->
+
+	<section class="u-align-center u-clearfix u-section-1"
+		id="carousel_0d0d">
+		<div class="u-clearfix u-sheet u-valign-middle u-sheet-2">
+			<h2 class="u-text u-text-palette-3-base u-text-1">Pick&nbsp;a
+				Category</h2>
+			<p class="u-text u-text-2">Lorem ipsum dolor sit amet,
+				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+				labore et dolore magna aliqua.</p>
+			<a th:href="@{/admin/categories/add}"
+				class="u-border-radius-10 u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">
+				&nbsp;&nbsp;<span class="u-file-icon u-icon"><img
+					src="/images/527448.png" alt=""></span>&nbsp;Add Category
+			</a>
+			<div class="u-expanded-width u-table u-table-responsive u-table-1">
+				<table class="u-table-entity u-table-entity-1">
+					<colgroup>
+						<col width="22.7%">
+						<col width="25.5%">
+						<col width="26.6%">
+						<col width="25.2%">
+					</colgroup>
+					<thead class="u-align-center u-table-header u-table-header-1">
+						<tr>
+							<th class="u-table-cell">S.no</th>
+							<th
+								class="u-border-1 u-border-palette-4-light-1 u-palette-4-light-2 u-table-cell u-table-cell-2">Category</th>
+							<th
+								class="u-border-1 u-border-palette-5-light-1 u-palette-5-light-2 u-table-cell u-table-cell-3">Update</th>
+							<th
+								class="u-border-1 u-border-palette-5-light-1 u-custom-color-5 u-table-cell u-table-cell-4">Delete</th>
+						</tr>
+					</thead>
+					<tbody class="u-align-center u-table-body">
+						<!-- <tr style="height: 26px;">
+							<td class="u-align-left u-border-1 u-border-grey-25 u-table-cell">Contacts</td>
+							<td class="u-border-1 u-border-grey-25 u-table-cell">25
+								contacts per client</td>
+							<td class="u-border-1 u-border-grey-25 u-table-cell">Unlimited
+								contacts</td>
+						</tr> -->
+						<tr th:each="category, iStat : ${categories}">
+							<th scope="row" th:text="${iStat.index + 1}">1</th>
+							<td th:text="${category.name}">Larry</td>
+							<td><a href=""
+								th:href="@{/admin/categories/update/{id}(id=${category.id})}"
+								class="btn btn-warning">Update</a></td>
+							<td><a href=""
+								th:href="@{/admin/categories/delete/{id}(id=${category.id})}"
+								class="btn btn-danger">Delete</a></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<div th:replace="common::adminFooter"></div>
+
+</body>
+</html>

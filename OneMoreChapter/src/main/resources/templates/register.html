@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" 
+xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta name="description" content="Male_Fashion Template">
+<meta name="keywords" content="Male_Fashion, unica, creative, html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sign-up</title>
+
+<!-- Google Font -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+	rel="stylesheet">
+
+<!-- Css Styles -->
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/elegant-icons.css"
+	th:href="@{/css/elegant-icons.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/magnific-popup.css"
+	th:href="@{/css/magnific-popup.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/nice-select.css"
+	th:href="@{/css/nice-select.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/owl.carousel.min.css"
+	th:href="@{/css/owl.carousel.min.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/slicknav.min.css"
+	th:href="@{/css/slicknav.min.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/style.css"
+	th:href="@{/css/style.css}" type="text/css">
+<link rel="stylesheet" href="../static/css/login.css"
+	th:href="@{/css/login.css}" type="text/css">
+
+
+</head>
+<body>
+	<!-- Header Section Begin -->
+	<header class="header">
+		<div th:replace="common::headertop"></div>
+		<div th:replace="common::headerdown"></div>
+	</header>
+	<!-- Header Section End -->
+
+	<!-- Register Form start -->
+	<div class="container-fluid ps-md-0">
+		<div class="row g-0">
+			<div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+			<div class="col-md-8 col-lg-6">
+				<div class="login d-flex align-items-center py-5">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-9 col-lg-8 mx-auto">
+								<h3 class="login-heading mb-4">Register to Book-ah!</h3>
+
+
+								<form th:action="@{/register}" th:object="${user}" method="post">
+									<div class="form-group">
+										<label for="firstName">First Name</label> <input type="text"
+											name="firstName" id="firstName" required
+											placeholder="Your Firstname"
+											class="form-control form-control-lg">
+									</div>
+									<div class="form-group">
+										<label for="lastName">Last Name</label> <input type="text"
+											name="lastName" id="lastName" required
+											placeholder="Your Lastname"
+											class="form-control form-control-lg">
+									</div>
+									<div class="form-group">
+										<label for="email">Email address</label> <input type="email"
+											class="form-control form-control-lg" required minlength="6"
+											placeholder="Email" name="email" id="email"
+											aria-describedby="emailHelp"> <small id="emailHelp"
+											class="form-text text-muted">We'll never share your
+											email with anyone else.</small>
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label> <input type="password"
+											class="form-control form-control-lg" required
+											placeholder="Password" name="password" id="password">
+									</div>
+
+									<input type="submit" value="Register"
+										class="btn btn-primary btn-block"> <br> <span
+										style="margin-top: 10px">Already have an account <a
+										class="linkControl" href="./login.html" th:href="@{/login}">Login
+											here</a></span>
+
+
+
+									<div style="text-align: center;">
+										<h5>OR</h5>
+
+										<div>
+											<a class="button primary" href="/oauth2/authorization/google">
+												<img width="15px"
+												style="margin-bottom: 3px; margin-right: 5px"
+												alt="Google login"
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+												Sign in with Google
+											</a>
+										</div>
+									</div>
+								</form>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Register Form end -->
+
+
+	<!-- Js Plugins -->
+	<script src="../static/js/jquery-3.3.1.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/js/jquery.nice-select.min.js"></script>
+	<script src="../static/js/jquery.nicescroll.min.js"></script>
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/jquery.countdown.min.js"></script>
+	<script src="../static/js/jquery.slicknav.js"></script>
+	<script src="../static/js/mixitup.min.js"></script>
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<script src="../static/js/main.js"></script>
+</body>
+
+</html>
